@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AssetController extends Controller {
 
     /**
-     * @Route("/css/{css}")
+     * @Route("/css2/{css}")
      */
     public function aAction($css, Request $request) {
         $host = $request->getHost();
@@ -18,7 +18,7 @@ class AssetController extends Controller {
     }
 
     /**
-     * @Route("/images/{img}")
+     * @Route("/images2/{img}")
      */
     public function bAction($img) {
         $host = $request->getHost();
@@ -27,7 +27,7 @@ class AssetController extends Controller {
     }
     
     /**
-     * @Route("/js/{js}")
+     * @Route("/js2/{js}")
      */
     public function cAction($js) {
         $host = $request->getHost();

@@ -1,240 +1,262 @@
 <!DOCTYPE html>
-<!--
-	Transit by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">		
-                {% block metas %}
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-                {% endblock %}
-                <title>{% block title %}Tamusgen Travels{% endblock %}</title>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<noscript>
-			<link rel="stylesheet" href="{{asset("css/skel.css", absolute=true)}}" />
-			<link rel="stylesheet" href="{{asset("css/style.css")}}" />
-			<link rel="stylesheet" href="{{asset("css/style-xlarge.css")}}" />
-                        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		</noscript>
-	</head>
-	<body class="landing">
-            {% block body %}
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="{{url('homepage')}}">Tamusgen</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="{{url('homepage')}}">Home</a></li>
-						<li><a href="generic.html">About Us</a></li>
-						<li><a href="elements.html">Our Services</a></li>
-						<li><a href="elements.html">Contact Us</a></li>
-						<li><a href="#" class="button special">Sign Up</a></li>
-					</ul>
-				</nav>
-			</header>
 
-		<!-- Banner -->
-			<section id="banner">
-				<h2>TAMUSGEN TRAVEL & TOURS</h2>
-				<p>IATA Accredited Agent</p>
-				<ul class="actions">
-					<li>
-						<a href="#" class="button big">Lorem ipsum dolor</a>
-					</li>
-				</ul>
-			</section>
+    <head>
+        {% block meta %}
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="">
+            <meta name="author" content="">
+        {% endblock %}
 
-		<!-- One -->
-			<section id="one" class="wrapper style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Consectetur adipisicing elit</h2>
-						<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
-					</header>
-					<div class="row 150%">
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color1 fa-cloud"></i>
-								<h3>Lorem ipsum dolor</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
-							</section>
-						</div>
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color9 fa-desktop"></i>
-								<h3>Consectetur adipisicing</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
-							</section>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color6 fa-rocket"></i>
-								<h3>Adipisicing elit totam</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
-							</section>
-						</div>
-					</div>
-				</div>
-			</section>
+        {% block title %}
+            <title>Tamusgen Travel & Tours</title>
+        {% endblock %}
 
-		<!-- Two -->
-			<section id="two" class="wrapper style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Lorem ipsum dolor sit</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
-					</header>
-					<section class="profiles">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Lorem ipsum</h4>
-								<p>Lorem ipsum dolor</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dolores</h4>
-								<p>Ullam nihil repudi</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Doloremque quo</h4>
-								<p>Harum corrupti quia</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dicta</h4>
-								<p>Et natus sapiente</p>
-							</section>
-						</div>
-					</section>
-					<footer>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
-						<ul class="actions">
-							<li>
-								<a href="#" class="button big">Lorem ipsum dolor sit</a>
-							</li>
-						</ul>
-					</footer>
-				</div>
-			</section>
+        {% block css %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
-		<!-- Three -->
-			<section id="three" class="wrapper style3 special">
-				<div class="container">
-					<header class="major">
-						<h2>Consectetur adipisicing elit</h2>
-						<p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
-					</header>
-				</div>
-				<div class="container 50%">
-					<form action="#" method="post">
-						<div class="row uniform">
-							<div class="6u 12u$(small)">
-								<input name="name" id="name" value="" placeholder="Name" type="text">
-							</div>
-							<div class="6u$ 12u$(small)">
-								<input name="email" id="email" value="" placeholder="Email" type="email">
-							</div>
-							<div class="12u$">
-								<textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="12u$">
-								<ul class="actions">
-									<li><input value="Send Message" class="special big" type="submit"></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</div>
-			</section>
+            <!-- Custom CSS -->
+            <link href="{{asset('css/landing-page.css')}}" rel="stylesheet">
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<section class="links">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Lorem ipsum dolor</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
-									<li><a href="#">Optio rerum beatae autem</a></li>
-									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
-									<li><a href="#">Quo fugit dolor totam</a></li>
-								</ul>
-							</section>
-							<section class="3u 6u$(medium) 12u$(small)">
-								<h3>Culpa quia, nesciunt</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
-									<li><a href="#">Corporis, non aut rerum</a></li>
-									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
-									<li><a href="#">Facere eligendi, inventore dolor</a></li>
-								</ul>
-							</section>
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Neque, dolore, facere</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
-									<li><a href="#">Explicabo inventore itaque autem</a></li>
-									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
-									<li><a href="#">Labore excepturi assumenda</a></li>
-								</ul>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(small)">
-								<h3>Illum, tempori, saepe</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Recusandae, culpa necessita nam</a></li>
-									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
-									<li><a href="#">Tempore nam, enim quia</a></li>
-									<li><a href="#">Explicabo molestiae dolor labore</a></li>
-								</ul>
-							</section>
-						</div>
-					</section>
-					<div class="row">
-						<div class="8u 12u$(medium)">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li>
-								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-							</ul>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<ul class="icons">
-								<li>
-									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
-                
-                {% endblock %}
-                {% block scripts %}
-		<script src="{{asset("js/jquery.min.js")}}"></script>
-		<script src="{{asset("js/skel.min.js")}}"></script>
-		<script src="{{asset("js/skel-layers.min.js")}}"></script>
-		<script src="{{asset("js/init.js")}}"></script>
-                {% endblock %}
+            <!-- Custom Fonts -->
+            <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        {% endblock %}
+        {% block style%}
+            <style>
+                .intro-header{
+                    background-image: url({{asset(random(['img/intro-bg.jpg', 'bokeh_car_lights_bg.jpg']))}});
+                }
+            </style>
+            {% endblock %}
 
-	</body>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        {% block body %}
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+                <div class="container topnav">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand topnav" href="#">Tamusgen</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class = "active">
+                                <a href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li>
+                                <a href="#services">Partners</a>
+                            </li>
+                            <li>
+                                <a href="#services">Clients</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                            {% if (1+1)==2 %}
+                            <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+                            {% else %}
+                                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Anonymous</a></p>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+
+
+            <!-- Header -->
+            <a name="home"></a>
+            <div class="intro-header">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="intro-message">
+                                <h1>TAMUSGEN TRAVEL & TOURS</h1>
+                                <h3><img src = "{{asset('img/iata.png')}}" /></h3>
+                                <hr class="intro-divider">
+                                <ul class="list-inline intro-social-buttons">
+                                    <li>
+                                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.intro-header -->
+
+            <!-- Page Content -->
+
+            <a  name="services"></a>
+            <div class="content-section-a">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
+                            <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                        </div>
+                        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                            <img class="img-responsive" src="{{asset('img/ipad.png')}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.content-section-a -->
+
+            <div class="content-section-b">
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
+                            <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                        </div>
+                        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                            <img class="img-responsive" src="{{asset('img/dog.png')}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.content-section-b -->
+
+            <div class="content-section-a">
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
+                            <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                        </div>
+                        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                            <img class="img-responsive" src="{{asset('img/phones.png')}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.content-section-a -->
+
+            <a  name="contact"></a>
+            <div class="banner">
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Connect to Start Bootstrap:</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.banner -->
+
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li class="footer-menu-divider">&sdot;</li>
+                                <li>
+                                    <a href="#about">About</a>
+                                </li>
+                                <li class="footer-menu-divider">&sdot;</li>
+                                <li>
+                                    <a href="#services">Services</a>
+                                </li>
+                                <li class="footer-menu-divider">&sdot;</li>
+                                <li>
+                                    <a href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                            <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+
+        {% block script %}
+            <!-- jQuery v2.1.1 -->
+            <script src="{{asset('js/jquery.js')}}"></script>
+
+            <!-- Bootstrap Core JavaScript v3.3.6 -->
+            <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        {% endblock %}
+    </body>
+
 </html>
