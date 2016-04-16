@@ -25,10 +25,11 @@
             <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
             <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         {% endblock %}
-        {% block style%}
+
+        {% block style %}
             <style>
                 .intro-header{
-                    background-image: url({{asset(random(['img/intro-bg.jpg', 'bokeh_car_lights_bg.jpg']))}});
+                    background-image: url({{asset('img/'~random(['bokeh_car_lights_bg.jpg','intro-bg.jpg']))}})
                 }
             </style>
             {% endblock %}
@@ -76,12 +77,13 @@
                                 <a href="#services">Clients</a>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+
+                                <a href="#contact">Contact Us</a>
                             </li>
                             {% if (1+1)==2 %}
-                            <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+                                <button type="button" class="btn btn-default navbar-btn">Sign in</button>
                             {% else %}
-                                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Anonymous</a></p>
+                                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
                             {% endif %}
                         </ul>
                     </div>
@@ -99,7 +101,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="intro-message">
+
                                 <h1>TAMUSGEN TRAVEL & TOURS</h1>
+
                                 <h3><img src = "{{asset('img/iata.png')}}" /></h3>
                                 <hr class="intro-divider">
                                 <ul class="list-inline intro-social-buttons">
@@ -240,6 +244,16 @@
                                 </li>
                                 <li class="footer-menu-divider">&sdot;</li>
                                 <li>
+
+                                    <a href="#services">Partners</a>
+                                </li>
+                                <li class="footer-menu-divider">&sdot;</li>
+                                <li>
+                                    <a href="#services">Clients</a>
+                                </li>
+                                <li class="footer-menu-divider">&sdot;</li>
+                                <li>
+
                                     <a href="#contact">Contact</a>
                                 </li>
                             </ul>
@@ -250,11 +264,11 @@
             </footer>
         {% endblock %}
 
-        {% block script %}
-            <!-- jQuery v2.1.1 -->
+        {% block js %}
+            <!-- jQuery -->
             <script src="{{asset('js/jquery.js')}}"></script>
 
-            <!-- Bootstrap Core JavaScript v3.3.6 -->
+            <!-- Bootstrap Core JavaScript -->
             <script src="{{asset('js/bootstrap.min.js')}}"></script>
         {% endblock %}
     </body>
