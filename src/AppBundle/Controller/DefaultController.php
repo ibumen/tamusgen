@@ -14,7 +14,7 @@ class DefaultController extends Controller
      */
     public function indexAction($_route, Request $request)
     {
-      // echo $request->getHttpHost(); exit();
+       //$request->getPathInfo()
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
@@ -26,6 +26,13 @@ class DefaultController extends Controller
      */
     public function aboutAction(Request $request){
         return $this->redirectToRoute("homepage");
+    }
+    
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contactAction(Request $request){
+        return $this->render('default/contact.html.twig', array("pgtitle"=>"Contact Us"));
     }
     
     /**
