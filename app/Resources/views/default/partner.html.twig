@@ -1,0 +1,32 @@
+{# empty Twig template #}
+{% extends 'default/pages.html.twig' %}
+{% block pagebody %}
+    <div class='container page-content'>
+        <div class='row'>
+            <div class='col-xs-12 col-sm-1 col-md-2 col-lg-3'>
+            </div>
+            <div class='col-xs-12 col-sm-11 col-md-10 col-lg-8'>
+                {% if partners == null %}
+                    {{sitecontent|raw}}
+                {% endif %}
+                {% if partners != null %}
+                    <table class="table table-bordered table-striped">
+                        <caption>List of our clients</caption>
+                        <thead>
+                            <tr><th>S/N</th><th>Client Name</th><th>Site</th><th>Client since:</th></tr>
+                        </thead>
+                        <tbody>
+                            {% for partner in partners %}
+                                <tr>
+                                    <td>{{loop.index}}</td><td>{{partner.getPartnerName()}}</td><td>{{partner.getPartnerSite()}}</td><td>{{partner.getStartofrelation()}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+            <div class='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
+            </div>
+        </div>
+    </div>
+{% endblock %}

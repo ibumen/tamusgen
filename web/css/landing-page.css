@@ -33,7 +33,7 @@ h6 {
 .page-content{
     padding-top: 30px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
-    min-height: 500px;
+    min-height: 300px;
 }
 .page-content-title{
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */

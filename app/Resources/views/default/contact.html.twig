@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class='container-fluid page-content'>
+    <div class='container page-content'>
         <div class='row'>
             <div class='col-xs-12 col-sm-1 col-md-2 col-lg-3'>
             </div>
@@ -69,24 +69,51 @@
                 </div>
             </div>
             <div class='col-xs-12 col-sm-5 col-md-4 col-lg-3'>
-                <form>
-                    <div class="form-group">
-                        <label for="sendername">Full Name</label>
-                        <input type="text" class="form-control" id="sendername" name='sendername' placeholder="Full Name">
+                <h4>Got some questions? </h4>
+                {{form(msgfrm)}}
+                <div class="progress" id="sendprogress" style="display:none;">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                </div>
+                <div class="modal fade bs-example-modal-sm" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Alert</h4>
+                            </div>
+                            <div class="modal-body" id="modalcontent"></div>                    
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" name='email' placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" rows="3" id='msg' name='msg'></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-default">Send</button>
-                </form>
+                </div>
             </div>
             <div class='col-xs-12 col-sm-1 col-md-2 col-lg-3'>
             </div>
         </div>
     </div>
+{% endblock %}
+{% block js %}
+    {{parent()}}
+    <script type="text/javascript">
+        $(document).on("click", "#messagefrm_send", function () {
+            //alert("clicked!")
+            
+            $("#sendprogress").show();
+            $.ajax({
+                url: '{{path("sendmessage")}}',
+                method: 'POST',
+                data: $("#msgfrm").serialize()
+            }).done(function (msg) {
+                $("#sendprogress").hide();
+                if (msg == "1") {
+                    $("#modalcontent").html("Your message has been sent!");
+                    $("#mymodal").modal();
+                    $('#msgfrm').trigger("reset");
+                } else {
+                    $("#modalcontent").html("Oops! Something whent wrong. Please check your form input and try again");
+                    $("#mymodal").modal();
+                }
+            });
+            return false;
+        });
+    </script>
 {% endblock %}

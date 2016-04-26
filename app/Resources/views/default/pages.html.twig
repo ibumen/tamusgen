@@ -1,0 +1,33 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block pagecontent %}
+    {% block pageheadsection %}
+        <div class='container-fluid page-content-title'>
+            <div class='row'>
+                <div class='col-xs-12 col-sm-1 col-md-2'>
+                </div>
+                <div class='col-xs-12 col-sm-10 col-md-8'>
+                    <div class="page-header">
+                        <h1>{% block pageheading %} {% if (pgtitle is defined) %} {{pgtitle}} {% else %} Welcome {% endif %}{% endblock %} <small>{% block pagesubheading %} {% endblock %}</small></h1>
+                    </div>
+                </div>
+                <div class='col-xs-12 col-sm-1 col-md-2'>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block pagebody %}
+        <div class='container page-content'>
+            <div class='row'>
+                <div class='col-xs-12 col-sm-1 col-md-2 col-lg-3'>
+                </div>
+                <div class='col-xs-12 col-sm-11 col-md-10 col-lg-8'>
+                    {{sitecontent|raw}}
+                </div>
+                <div class='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
