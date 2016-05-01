@@ -53,12 +53,12 @@ class Agent {
     private $otherName;
 
     /**
-     * @ORM\Column(name="email", type="string", length=100)
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(name="mobile", type="string", length=20)
+     * @ORM\Column(name="mobile", type="string", length=20, nullable=true)
      */
     private $mobile;
 
@@ -72,14 +72,16 @@ class Agent {
      */
     private $status;
 
-
+    public function __construct() {
+        $this->status = "active";
+        $this->dateCreated= new \DateTime();
+    }
     /**
      * Get agentId
      *
      * @return integer 
      */
-    public function getAgentId()
-    {
+    public function getAgentId() {
         return $this->agentId;
     }
 
@@ -89,8 +91,7 @@ class Agent {
      * @param string $regNo
      * @return Agent
      */
-    public function setRegNo($regNo)
-    {
+    public function setRegNo($regNo) {
         $this->regNo = $regNo;
 
         return $this;
@@ -101,8 +102,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getRegNo()
-    {
+    public function getRegNo() {
         return $this->regNo;
     }
 
@@ -112,8 +112,7 @@ class Agent {
      * @param string $firstName
      * @return Agent
      */
-    public function setFirstName($firstName)
-    {
+    public function setFirstName($firstName) {
         $this->firstName = $firstName;
 
         return $this;
@@ -124,8 +123,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getFirstName()
-    {
+    public function getFirstName() {
         return $this->firstName;
     }
 
@@ -135,8 +133,7 @@ class Agent {
      * @param string $lastName
      * @return Agent
      */
-    public function setLastName($lastName)
-    {
+    public function setLastName($lastName) {
         $this->lastName = $lastName;
 
         return $this;
@@ -147,8 +144,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getLastName()
-    {
+    public function getLastName() {
         return $this->lastName;
     }
 
@@ -158,8 +154,7 @@ class Agent {
      * @param string $otherName
      * @return Agent
      */
-    public function setOtherName($otherName)
-    {
+    public function setOtherName($otherName) {
         $this->otherName = $otherName;
 
         return $this;
@@ -170,8 +165,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getOtherName()
-    {
+    public function getOtherName() {
         return $this->otherName;
     }
 
@@ -181,8 +175,7 @@ class Agent {
      * @param string $email
      * @return Agent
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -193,8 +186,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -204,8 +196,7 @@ class Agent {
      * @param string $mobile
      * @return Agent
      */
-    public function setMobile($mobile)
-    {
+    public function setMobile($mobile) {
         $this->mobile = $mobile;
 
         return $this;
@@ -216,8 +207,7 @@ class Agent {
      *
      * @return string 
      */
-    public function getMobile()
-    {
+    public function getMobile() {
         return $this->mobile;
     }
 
@@ -227,8 +217,7 @@ class Agent {
      * @param \DateTime $dateCreated
      * @return Agent
      */
-    public function setDateCreated($dateCreated)
-    {
+    public function setDateCreated($dateCreated) {
         $this->dateCreated = $dateCreated;
 
         return $this;
@@ -239,8 +228,7 @@ class Agent {
      *
      * @return \DateTime 
      */
-    public function getDateCreated()
-    {
+    public function getDateCreated() {
         return $this->dateCreated;
     }
 
@@ -250,8 +238,7 @@ class Agent {
      * @param string $status
      * @return Agent
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
 
         return $this;
@@ -262,8 +249,49 @@ class Agent {
      *
      * @return string 
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
+
+    public function getAgentFullName($format = "S, f o") {
+        $format_arr = str_split($format);
+        $output = "";
+        foreach ($format_arr as $ch) {
+            switch ($ch) {
+                case "S": {
+                        $output.=strtoupper($this->getLastName());
+                        break;
+                    }
+                case "s": {
+                        $output.=ucfirst(strtolower($this->getLastName()));
+                        break;
+                    }
+                case "F": {
+                        $output.=strtoupper($this->getFirstName());
+                        break;
+                    }
+                case "f": {
+                        $output.=ucfirst(strtolower($this->getFirstName()));
+                        break;
+                    }
+                case "O": {
+                        $output.=strtoupper($this->getOtherName());
+                        break;
+                    }
+                case "o": {
+                        $output.=ucfirst(strtolower($this->getOtherName()));
+                        break;
+                    }
+                default: {
+                        $output.=$ch;
+                    }
+            }
+        }
+        return $output;
+    }
+    
+    public function __toString() {
+        return $this->getAgentFullName();
+    }
+
 }

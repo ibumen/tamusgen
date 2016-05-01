@@ -23,7 +23,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Message {
     /* Constants for status */
 
-    const STATUS = array("read", "unread");
+    const STATUS = array("read", "unread", "replied");
 
     /**
      * @ORM\Id
@@ -46,6 +46,11 @@ class Message {
      * @ORM\Column(name="senderemail", type="string", length=100)
      */
     private $senderEmail;
+
+    /**
+     * @ORM\Column(name="senderno", type="string", length=20, nullable=true)
+     */
+    private $senderNo;
 
     /**
      * @ORM\Column(name="status", type="string", length=10, options={"default":"unread"})
@@ -153,5 +158,28 @@ class Message {
     public function getMessageStatus()
     {
         return $this->messageStatus;
+    }
+
+    /**
+     * Set senderNo
+     *
+     * @param string $senderNo
+     * @return Message
+     */
+    public function setSenderNo($senderNo)
+    {
+        $this->senderNo = $senderNo;
+
+        return $this;
+    }
+
+    /**
+     * Get senderNo
+     *
+     * @return string 
+     */
+    public function getSenderNo()
+    {
+        return $this->senderNo;
     }
 }
